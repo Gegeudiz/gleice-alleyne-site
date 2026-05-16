@@ -19,10 +19,6 @@ export function Header() {
           className={`header__nav${open ? " header__nav--open" : ""}`}
           aria-label="Principal"
         >
-          <button type="button" className="header__nav-close" onClick={() => setOpen(false)} aria-label="Fechar menu">
-            <span aria-hidden>✕</span>
-            Fechar
-          </button>
           {site.navMain.map((item) => (
             <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
               {item.label}

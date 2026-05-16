@@ -137,19 +137,9 @@
     transform: translateX(0) !important;
   }
 
+  /* Fechar só pelo ícone do menu (hambúrguer → X), evita dois botões sobrepostos */
   .header--health .header__nav-close {
-    display: inline-flex;
-    align-self: flex-end;
-    align-items: center;
-    gap: 0.45rem;
-    margin-bottom: 1.25rem;
-    padding: 0.4rem 0.85rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.88rem;
+    display: none;
   }
 
   .header--health .header__nav > a {
