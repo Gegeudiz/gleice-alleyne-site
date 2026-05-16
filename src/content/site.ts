@@ -9,9 +9,15 @@ const WHATSAPP_HREF =
 const WHATSAPP_AGENDAR_CONSULTA_HREF =
   "https://wa.me/5561998528884?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20uma%20Consulta%20Inicial%20com%20a%20Gleice%20Alleyne.%20Quero%20dar%20o%20primeiro%20passo%20para%20reorganizar%20minha%20mente.";
 
+/** FAQ — botão «entrar em contato com a Equipe» */
+const WHATSAPP_DUVIDAS_EQUIPE_HREF =
+  "https://wa.me/5561998528884?text=Ol%C3%A1.%20Estou%20com%20d%C3%BAvidas%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20Eventos%2C%20Produtos%20ou%20Servi%C3%A7os%20oferecidos%20pela%20Gleice%20Alleyne.";
+
 export const site = {
   professionalName: "Gleice Alleyne",
   brandShort: "Gleice Alleyne",
+  /** Monograma GA — header, rodapé; favicon em /public/favicon.png */
+  brandLogo: "/images/logo-ga.png",
   tagline: "Psicóloga e mentora — conteúdo de teste",
   announcement:
     "Cuidar da mente nunca foi tão simples — Terapias, Cursos, Livros e Mentorias com clareza. A jornada começa aqui!",
@@ -37,9 +43,9 @@ export const site = {
     { label: "Sobre", href: "#sobre" },
   ] as const,
   social: [
-    { label: "Instagram", href: "https://instagram.com/", icon: "instagram" as const },
-    { label: "YouTube", href: "https://www.youtube.com/@GleiceAlleyneTeste", icon: "youtube" as const },
-    { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" as const },
+    { label: "Instagram", href: "https://www.instagram.com/gleicealleyne/", icon: "instagram" as const },
+    { label: "YouTube", href: "https://www.youtube.com/@gleicealleyne/videos", icon: "youtube" as const },
+    { label: "TikTok", href: "https://www.tiktok.com/@gleicealleyne", icon: "tiktok" as const },
   ] as const,
   featuresBento: {
     title: "Diferenciais e benefícios",
@@ -114,6 +120,8 @@ export const site = {
     href: WHATSAPP_HREF,
     /** Consulta inicial — hero e CTA destacado nos diferenciais */
     hrefAgendarConsulta: WHATSAPP_AGENDAR_CONSULTA_HREF,
+    /** FAQ — dúvidas sobre eventos, produtos e serviços */
+    hrefDuvidasEquipe: WHATSAPP_DUVIDAS_EQUIPE_HREF,
   },
   youtube: {
     channelUrl: "https://www.youtube.com/@GleiceAlleyneTeste",
@@ -157,31 +165,30 @@ export const site = {
   ],
   faq: [
     {
-      q: "Como funciona o primeiro contato? (teste)",
-      a: "Texto teste: você pode enviar uma mensagem pelo WhatsApp ou seguir o link indicado em cada projeto. Não há atendimento clínico por este site.",
+      q: "Como funciona a Terapia Integrativa?",
+      a: "Nós faremos uma conversa inicial para entender melhor suas necessidades e expectativas. Em seguida, faremos uma avaliação inicial para definir o melhor caminho para você com a aplicação de ferramentas da Terapia Integrativa.",
     },
     {
-      q: "Atendimento online ou presencial? (teste)",
-      a: "Texto teste: ambos podem existir conforme disponibilidade e cidade. Confirme diretamente no contato oficial.",
+      q: "Onde acontecem a Terapia Integrativa Presencial?",
+      a: "No modo Presencial, a Terapia Integrativa acontece em Orlando/FL-EUA. Ao entrar em contato com a minha equipe você receberá todas as informações necessárias para agendar a sua consulta.",
     },
     {
-      q: "Onde acompanho lives e novidades? (teste)",
-      a: "Texto teste: pelo canal do YouTube — a seção de destaque da live mais abaixo na página leva à transmissão ou ao canal quando configurada.",
+      q: "Onde compro os cursos Online e os Livros?",
+      a: "Nossos materiais Online, tanto cursos e os livros, estão disponívels nas melhores plataformas de venda online como Amazon e Hotmart.",
     },
     {
-      q: "Este site substitui emergência ou consulta? (teste)",
-      a: "Não. Em situação de risco, procure serviços de emergência ou CVV (188).",
+      q: "As terapias e consultas online acontecem aqui pelo site?",
+      a: "Não. Esta plataforma é apenas um fluxo para te guiar da melhor maneira para os nossos canais privados de atendimento. Com segurança e Ética.",
     },
   ],
   footerNote:
-    "© 2026 Gleice Alleyne — página com textos e links de teste. Substitua antes de publicar.",
+    "© 2026 Gleice Alleyne — Todos os direitos reservados.",
   nav: [
     { label: "Como funciona", href: "#como-funciona" },
     { label: "Produtos", href: "#produtos" },
     { label: "Live", href: "#live-youtube" },
     { label: "Sobre", href: "#sobre" },
     { label: "Dúvidas", href: "#faq" },
-    { label: "Contato", href: "#contato" },
   ],
 } as const;
 

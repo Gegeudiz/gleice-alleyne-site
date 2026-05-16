@@ -11,7 +11,15 @@ export function FAQ() {
           <h2 id="faq-heading" className="section-title section-title--left">
             Perguntas frequentes
           </h2>
-          <p className="faq__intro">Respostas de exemplo — ajuste linguagem e detalhes com a profissional.</p>
+          <p className="faq__intro">Essas dúvidas talvez sejam as suas. Mas caso ainda precise entre em contato com a minha equipe.</p>
+          <a
+            className="btn btn--secondary faq__cta"
+            href={site.whatsapp.hrefDuvidasEquipe}
+            target="_blank"
+            rel="noreferrer"
+          >
+            entrar em contato com a Equipe
+          </a>
         </div>
         <div className="faq__list">
           {site.faq.map((item, i) => {

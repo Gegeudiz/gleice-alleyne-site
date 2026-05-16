@@ -183,9 +183,20 @@
   flex-shrink: 0;
 }
 
-.header__mark--light {
+.brand-logo.header__mark,
+.header__mark--logo.brand-logo {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  background: #f5f0e6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.header__mark--light.brand-logo {
   box-shadow: none;
-  border: 1px solid color-mix(in srgb, var(--rose) 55%, transparent);
+  border: 1px solid color-mix(in srgb, var(--rose) 40%, transparent);
 }
 
 .header__nav {
@@ -1188,6 +1199,10 @@
   color: var(--ink-soft);
 }
 
+.faq__cta {
+  margin-top: 1.25rem;
+}
+
 .faq__list {
   border-top: 1px solid color-mix(in srgb, var(--sage) 22%, transparent);
 }
@@ -1261,6 +1276,30 @@
   margin: 0;
   color: color-mix(in srgb, #fff 78%, transparent);
   line-height: 1.5;
+}
+
+.footer__social {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.footer__social a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid color-mix(in srgb, #fff 22%, transparent);
+  color: #fff;
+  transition: background 0.15s ease;
+}
+
+.footer__social a:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .footer__label {

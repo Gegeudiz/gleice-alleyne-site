@@ -1,3 +1,5 @@
+import { BrandLogo } from "./BrandLogo";
+import { SocialLinks } from "./SocialLinks";
 import { site } from "../content/site";
 
 export function Footer() {
@@ -6,28 +8,28 @@ export function Footer() {
       <div className="footer__inner">
         <div>
           <div className="footer__brand">
-            <span className="header__mark header__mark--light" aria-hidden />
+            <BrandLogo className="header__mark header__mark--logo header__mark--light" />
             <div>
               <strong>{site.professionalName}</strong>
-              <p>Canal de informações e encaminhamento — sem atendimento clínico por mensagem neste site (texto teste).</p>
+              <p>Você está a um passo de ter um atendimento personalizado. Nossos produtos, livros e serviços foram projetados para levar você a um próximo nível de vida.</p>
+              <SocialLinks className="footer__social" />
             </div>
           </div>
         </div>
         <div>
-          <h3 className="footer__label">Contato (teste)</h3>
           <ul className="footer__links">
             <li>
-              <a href={site.whatsapp.href} target="_blank" rel="noreferrer">
+              <a href={site.whatsapp.hrefAgendarConsulta} target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
             </li>
             <li>
-              <a href={site.youtube.channelUrl} target="_blank" rel="noreferrer">
+              <a href={site.youtube.channelVideosUrl} target="_blank" rel="noreferrer">
                 YouTube
               </a>
             </li>
             <li>
-              <a href="mailto:contato.teste@gleicealleyne.com.br">E-mail de teste</a>
+              <a href="mailto:gleicealleyne@gmail.com">E-mail</a>
             </li>
           </ul>
         </div>
