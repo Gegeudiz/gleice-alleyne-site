@@ -8,6 +8,7 @@
   margin: 2rem 0 3rem;
   padding: 0 clamp(0.75rem, 3vw, 1.25rem);
   position: relative;
+  overflow: visible;
 }
 
 .tj__shell {
@@ -58,6 +59,10 @@
   perspective: 1600px;
   perspective-origin: 50% 0%;
   overflow: visible;
+}
+
+.tj__swipe-hint {
+  display: none;
 }
 
 .tj__stack {
@@ -125,6 +130,23 @@
   justify-content: center;
   gap: 0.4rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(246, 244, 242, 0.95) 100%);
+}
+
+.tj-card__kicker-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+}
+
+.tj-card__swipe-label {
+  display: none;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--ink-soft) 88%, transparent);
+  opacity: 0.72;
+  line-height: 1.2;
 }
 
 .tj-card__kicker {
@@ -242,40 +264,115 @@
 
 @media (max-width: 780px) {
   .tj {
-    --tj-card-min-h: min(94dvh, 900px);
+    --tj-card-min-h: clamp(17rem, 48dvh, 22rem);
+    --tj-deck-pad-top: clamp(0.85rem, 2.5vw, 1.1rem);
+    margin: 1.5rem 0 2.25rem;
+  }
+
+  .tj__shell {
+    position: relative;
+    overflow: visible;
+    padding-bottom: clamp(1.1rem, 3vw, 1.5rem);
+  }
+
+  .tj__head {
+    margin-bottom: 1rem;
+  }
+
+  .tj__stage {
+    overflow: visible;
+  }
+
+  .tj__stack {
+    min-height: var(--tj-card-min-h);
+    padding-top: var(--tj-deck-pad-top);
+  }
+
+  .tj__swipe-hint {
+    display: flex;
+    position: absolute;
+    top: calc(var(--tj-deck-pad-top) + var(--tj-card-min-h) * 0.42);
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    color: #111;
+    font-size: 1.85rem;
+    font-weight: 500;
+    line-height: 1;
+    user-select: none;
+    opacity: 0.85;
+    transform: translateY(-50%);
+  }
+
+  .tj__swipe-hint--left {
+    left: clamp(-2.1rem, -9vw, -1.35rem);
+  }
+
+  .tj__swipe-hint--right {
+    right: clamp(-2.1rem, -9vw, -1.35rem);
+    left: auto;
   }
 
   .tj-card {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(120px, 22dvh) auto;
+    grid-template-rows: auto auto;
     top: var(--tj-deck-pad-top);
     bottom: auto;
-    min-height: min(88dvh, 820px);
+    min-height: unset;
     height: auto;
     max-height: none;
   }
 
   .tj-card__media {
     min-height: unset;
-    max-height: 28dvh;
+    max-height: 9.5rem;
+    aspect-ratio: 16 / 9;
+  }
+
+  .tj-card__media img {
+    object-position: center top;
   }
 
   .tj-card__body {
     justify-content: flex-start;
-    padding-top: clamp(1rem, 3vw, 1.35rem);
-    padding-bottom: clamp(1.15rem, 3.5vw, 1.5rem);
-    flex: 1 1 auto;
-    min-height: min(42dvh, 320px);
+    padding: 0.75rem 0.9rem 0.85rem;
+    flex: 0 1 auto;
+    min-height: unset;
+    gap: 0.3rem;
+  }
+
+  .tj-card__title {
+    font-size: 1.12rem;
   }
 
   .tj-card__text {
+    font-size: 0.8rem;
+    line-height: 1.48;
     overflow-wrap: anywhere;
   }
 
+  .tj-card__kicker {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .tj-card__swipe-label {
+    display: inline;
+    font-size: 0.62rem;
+  }
+
   .tj-card__step-num {
-    top: 0.45rem;
-    right: 0.6rem;
-    font-size: 2rem;
+    top: 0.35rem;
+    right: 0.5rem;
+    font-size: 1.65rem;
+  }
+
+  .tj__hint {
+    margin-top: 0.55rem;
+    font-size: 0.75rem;
   }
 }
 

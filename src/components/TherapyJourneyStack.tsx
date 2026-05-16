@@ -111,6 +111,17 @@ export function TherapyJourneyStack({ section }: Props) {
             Etapa {activeIndex + 1} de {n}: {steps[activeIndex]?.title}
           </p>
 
+          {isMobile ? (
+            <>
+              <span className="tj__swipe-hint tj__swipe-hint--left" aria-hidden>
+                ‹
+              </span>
+              <span className="tj__swipe-hint tj__swipe-hint--right" aria-hidden>
+                ›
+              </span>
+            </>
+          ) : null}
+
           <div className="tj__stack">
             {steps.map((step, i) => {
               const stackPos = (i - activeIndex + n) % n;
@@ -165,7 +176,12 @@ export function TherapyJourneyStack({ section }: Props) {
                     />
                   </div>
                   <div className="tj-card__body">
-                    <p className="tj-card__kicker">{step.kicker}</p>
+                    <div className="tj-card__kicker-row">
+                      <p className="tj-card__kicker">{step.kicker}</p>
+                      {isMobile && isFront ? (
+                        <span className="tj-card__swipe-label">arraste para o lado</span>
+                      ) : null}
+                    </div>
                     <h3 className="tj-card__title">{step.title}</h3>
                     <p className="tj-card__text">{step.body}</p>
                   </div>
