@@ -31,9 +31,6 @@ export function LiveHighlight() {
               <YouTubeIcon />
               Abrir Live
             </a>
-            <a className="btn btn--outline-light" href={y.channelVideosUrl} target="_blank" rel="noreferrer">
-              Ver canal
-            </a>
           </div>
         </div>
       </div>

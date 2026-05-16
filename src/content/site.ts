@@ -129,10 +129,10 @@ export const site = {
     channelVideosUrl: "https://www.youtube.com/@gleicealleyne/videos",
     /** Imagem do card de live — ficheiro em public/images/ */
     liveImage: "/images/gleice-live-youtube.png",
-    /** Link da live agendada ou do canal — substitua pela URL real */
-    liveEventUrl: "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-    liveTitle: "Live: rotinas leves, corpo e espiritualidade no dia a dia",
-    liveDateLabel: "Sábado, 7 de junho de 2026 · 19h (horário de teste)",
+    /** Link do botão «Abrir Live» — página de streams do canal */
+    liveEventUrl: "https://www.youtube.com/@gleicealleyne/streams",
+    liveTitle: "Live: toda segunda feira no Youtube.",
+    liveDateLabel: "Segunda-feira às 07hs EUA - 08hs Brasil. Com assuntos interessantes e que irão agregar valor à sua vida. Faça parte dessa comunidade de crescimento.",
     liveBadge: "Próxima live no YouTube",
     liveEyebrow: "YouTube · Lives e comunidade",
   },
