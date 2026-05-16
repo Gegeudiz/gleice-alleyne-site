@@ -1,0 +1,52 @@
+Pasta das fotos dos 4 cards — "Como funciona o acompanhamento terapêutico"
+================================================================================
+
+NOMES DOS FICHEIROS (têm de coincidir com src/content/site.ts):
+  passo-01.png
+  passo-02.png
+  passo-03.png
+  passo-04.png
+
+Coloca os 4 ficheiros nesta pasta: public/images/etapas-terapia/
+
+ATENÇÃO (Windows / exportação):
+  Não uses nomes duplos como "passo-01.jpg.jpg" — o Windows às vezes adiciona
+  uma segunda extensão. O ficheiro tem de chamar-se exactamente "passo-01.png" (ou o nome que estiver no site.ts).
+  Se exportares PNG, usa .png no nome e no site.ts.
+
+
+PROPORÇÕES E TAMANHOS
+--------------------------------------------------------------------------------
+
+O layout usa object-fit: cover (a imagem enche a zona e corta o que sobra).
+
+• UMA proporção para os dois (recomendado — mais simples)
+  - Formato horizontal 3:2 ou 16:9 (ex.: 2400×1600 px, ou 1920×1080 px).
+  - Funciona em desktop e mobile; o recorte ajusta-se automaticamente.
+  - Deixa o rosto / assunto importante no CENTRO da foto para não perderes
+    conteúdo importante nos cortes laterais (desktop) ou verticais (mobile).
+
+• Se quiseres otimizar em dois ficheiros por etapa (opcional):
+  - DESKTOP: zona da imagem é mais "alta" à esquerda do card — proporção
+    aproximada da área da foto ~ 4:5 ou 3:4 (retrato suave), mín. ~1200 px
+    de largura.
+  - MOBILE: faixa horizontal no topo do card — proporção larga ~ 2:1 ou
+    16:9, mín. ~1200 px de largura.
+  Nesse caso precisarias de lógica extra no site (duas imagens por passo);
+  hoje o projeto usa um único URL por passo em site.ts.
+
+
+RESOLUÇÃO MÍNIMA SUGERIDA
+--------------------------------------------------------------------------------
+  1600 px no lado maior (ou 1920 px para ecrãs retina) — formato JPG otimizado
+  ou WebP (~80–90% qualidade).
+
+
+Os caminhos em site.ts já estão configurados para:
+
+  "/images/etapas-terapia/passo-01.png"
+  "/images/etapas-terapia/passo-02.png"
+  "/images/etapas-terapia/passo-03.png"
+  "/images/etapas-terapia/passo-04.png"
+
+Se mudares extensão ou nomes, edita howItWorks.steps[].image em src/content/site.ts.

@@ -1,0 +1,286 @@
+/* Pilha de cards — acompanhamento (sem captura de scroll; cartões claros) */
+
+.tj {
+  --tj-radius: var(--radius-lg);
+  --tj-stack-max: 920px;
+  --tj-card-min-h: min(68dvh, 520px);
+  --tj-deck-pad-top: clamp(2.25rem, 5vw, 3rem);
+  margin: 2rem 0 3rem;
+  padding: 0 clamp(0.75rem, 3vw, 1.25rem);
+  position: relative;
+}
+
+.tj__shell {
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  background: linear-gradient(
+    168deg,
+    color-mix(in srgb, var(--forest) 94%, #0a1210) 0%,
+    color-mix(in srgb, var(--forest) 82%, #1a2830) 55%,
+    color-mix(in srgb, var(--forest) 76%, var(--terracotta) 10%) 100%
+  );
+  color: #fff;
+  border-radius: var(--tj-radius);
+  padding: clamp(1.5rem, 4vw, 2.4rem) clamp(1.1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.1rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tj__head {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto clamp(1.35rem, 3.5vw, 2rem);
+}
+
+.tj__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4.2vw, 2.55rem);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.tj__lead {
+  margin: 0;
+  font-size: clamp(0.92rem, 2.1vw, 1.05rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.tj__stage {
+  position: relative;
+  max-width: var(--tj-stack-max);
+  margin: 0 auto;
+  perspective: 1600px;
+  perspective-origin: 50% 0%;
+  overflow: visible;
+}
+
+.tj__stack {
+  position: relative;
+  min-height: var(--tj-card-min-h);
+  padding-top: var(--tj-deck-pad-top);
+  margin-top: 0.25rem;
+  overflow: visible;
+}
+
+.tj-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--tj-deck-pad-top);
+  bottom: 0;
+  border-radius: calc(var(--tj-radius) - 2px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  background: linear-gradient(180deg, #fdfcfa 0%, #f4f2ef 100%);
+  border: 1px solid rgba(30, 36, 31, 0.08);
+  box-shadow:
+    0 22px 50px rgba(30, 36, 31, 0.14),
+    0 4px 12px rgba(30, 36, 31, 0.06),
+    inset 0 1px 0 #fff;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  transform-origin: 50% 100%;
+}
+
+.tj-card[data-front="true"] {
+  touch-action: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tj-card[data-front="true"]:hover {
+    box-shadow:
+      0 28px 64px rgba(30, 36, 31, 0.18),
+      0 6px 16px rgba(30, 36, 31, 0.08),
+      inset 0 1px 0 #fff;
+  }
+}
+
+.tj-card__media {
+  position: relative;
+  min-height: 220px;
+  background: var(--mist);
+}
+
+.tj-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  pointer-events: none;
+}
+
+.tj-card__body {
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(246, 244, 242, 0.95) 100%);
+}
+
+.tj-card__kicker {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--forest) 88%, #fff);
+  margin: 0;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sage) 22%, #fff);
+  border: 1px solid color-mix(in srgb, var(--forest) 12%, transparent);
+}
+
+.tj-card__step-num {
+  font-variant-numeric: tabular-nums;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: var(--font-serif);
+  color: color-mix(in srgb, var(--forest) 12%, transparent);
+  position: absolute;
+  top: 0.55rem;
+  right: 0.75rem;
+  pointer-events: none;
+}
+
+.tj-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.32rem, 2.8vw, 1.82rem);
+  margin: 0;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.15;
+}
+
+.tj-card__text {
+  margin: 0.2rem 0 0;
+  font-size: clamp(0.88rem, 1.9vw, 0.98rem);
+  line-height: 1.58;
+  color: var(--ink-soft);
+}
+
+.tj__nav--desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: clamp(1.2rem, 3vw, 1.65rem);
+  flex-wrap: wrap;
+}
+
+.tj__progress {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tj__btn-next {
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.68rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  background: #fff;
+  color: var(--forest);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+}
+
+.tj__btn-next:hover:not(:disabled) {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+}
+
+.tj__btn-next:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.tj__btn-next:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.tj__btn-next:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--rose) 75%, #fff);
+  outline-offset: 3px;
+}
+
+.tj__btn-next-arrow {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.tj__hint {
+  text-align: center;
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.42);
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 780px) {
+  .tj {
+    --tj-card-min-h: min(94dvh, 900px);
+  }
+
+  .tj-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(120px, 22dvh) auto;
+    top: var(--tj-deck-pad-top);
+    bottom: auto;
+    min-height: min(88dvh, 820px);
+    height: auto;
+    max-height: none;
+  }
+
+  .tj-card__media {
+    min-height: unset;
+    max-height: 28dvh;
+  }
+
+  .tj-card__body {
+    justify-content: flex-start;
+    padding-top: clamp(1rem, 3vw, 1.35rem);
+    padding-bottom: clamp(1.15rem, 3.5vw, 1.5rem);
+    flex: 1 1 auto;
+    min-height: min(42dvh, 320px);
+  }
+
+  .tj-card__text {
+    overflow-wrap: anywhere;
+  }
+
+  .tj-card__step-num {
+    top: 0.45rem;
+    right: 0.6rem;
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tj__btn-next {
+    transition: none;
+  }
+}
