@@ -9,10 +9,12 @@ Para cada produto há DOIS ficheiros (substitui mantendo o nome):
 IDs atuais (nomes dos ficheiros):
   terapia-online
   terapia-presencial
+  tecnicas-terapias-individuais
   curso-emc
-  cromoterapia
-  livro-versoes
+  apostila-emc
+  livro-reflexione-1
   livro-reflexione-2
+  livro-versoes
   youtube
 
 Sugestão de tamanhos (exportação):

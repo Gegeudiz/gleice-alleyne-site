@@ -1,6 +1,7 @@
 import { About } from "./components/About";
 import { FAQ } from "./components/FAQ";
 import { Features } from "./components/Features";
+import { OfferOverview } from "./components/OfferOverview";
 import { Footer } from "./components/Footer";
 import { HowItWorks } from "./components/HowItWorks";
 import { LiveHighlight } from "./components/LiveHighlight";
@@ -10,6 +11,7 @@ import { ScrollReveal } from "./components/ScrollReveal";
 import { Testimonials } from "./components/Testimonials";
 import "./styles/layout.css";
 import "./styles/health-theme.css";
+import "./styles/offer-overview.css";
 import "./styles/scroll-reveal.css";
 
 export default function App() {
@@ -18,7 +20,8 @@ export default function App() {
       <Masthead />
       <main>
         <div className="page">
-          <ScrollReveal>
+          <OfferOverview />
+          <ScrollReveal delayMs={45}>
             <Features />
           </ScrollReveal>
           <ScrollReveal delayMs={55}>

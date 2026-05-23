@@ -47,6 +47,64 @@ export const site = {
     { label: "YouTube", href: "https://www.youtube.com/@gleicealleyne/videos", icon: "youtube" as const },
     { label: "TikTok", href: "https://www.tiktok.com/@gleicealleyne", icon: "tiktok" as const },
   ] as const,
+  offerOverview: {
+    id: "ecossistema-gleice",
+    title: "Mapa do que você encontra por aqui",
+    lead: "Um mapa de tudo o que oferecemos para ajudar você a alcançar sua melhor versão — terapias, técnicas, mentorias, cursos e livros. Conheça as possibilidades com clareza e sem pressa.",
+    chapters: [
+      {
+        id: "terapia-integrativa",
+        hub: "Terapia Integrativa",
+        branches: ["Online", "Presencial"] as const,
+        details: [
+          "Protocolo de 6 sessões personalizado",
+          "1 sessão por semana",
+          "Técnicas integrativas de acordo com a necessidade de cada pessoa",
+          "Princípios Bíblicos unidndo Espiritualidade, Mente e Corpo",
+          "Consulta segura e confidencial com atendimento Personalizado",
+        ] as const,
+      },
+      {
+        id: "tecnicas-individuais",
+        hub: "Sessões com Técnicas Integrativas Individuais",
+        branches: ["PNL", "Hipnose Clínica", "Mindfulness", "Cromoterapia", "Florais"] as const,
+        details: [
+          "Cada técnica com protocolo de 6 sessões",
+          "Encontros semanais",
+          "Você escolhe o que mais se interessa e juntos vamos aplicar a ferramenta para destravar a sua vida",
+          "Um Investimento menor para você conhecer cada técnica com acompanhamento correto e aplicar ferramentas que podem mudar sua vida. ",
+        ] as const,
+      },
+      {
+        id: "projeto-emc",
+        hub: "Projeto EMC",
+        hubTag: "Espiritual · Mente · Corpo",
+        branches: [
+          "Imersão EMC (7 dias)",
+          "Curso Autocredibilidade",
+          "Workshops",
+          "Curso Online EMC",
+        ] as const,
+        details: [
+          "Neste Projeto a Gleice Alleyne ensina e orienta seus alunos passando por uma jornada integrada",
+          "Imersão online de 7 dias — tema Autocredibilidade",
+          "Curso Online Autocredibilidade — 5 módulos",
+          "Workshops online e presencial — eventos ao vivo com datas marcadas e temas específicos sobre Espírito, Mente e Corpo",
+          "Curso Online EMC — 5 módulos. Acompanhe o passoa passo de como funciona o nosso Workshop e aplique as ferramentas em sua vida.",
+        ] as const,
+      },
+      {
+        id: "livros",
+        hub: "Livros e materiais",
+        branches: ["Livro Versões", "Livro Reflexione 1", "Livro Reflexione 2", "Apostila EMC"] as const,
+        details: [
+          "Publicações e materiais de apoio para continuar a jornada no seu ritmo",
+          "Autoria Própria - Gleice Alleyne",
+          "Livros e Apostilas disponíveis na Amazon e Hotmart",
+        ] as const,
+      },
+    ] as const,
+  },
   featuresBento: {
     title: "Diferenciais e benefícios",
     lead: "Cada atendimento é conduzido de forma personalizada, unindo conhecimento terapêutico, princípios bíblicos e técnicas integrativas que auxiliam no alinhamento emocional, espiritual e físico.",
@@ -230,12 +288,28 @@ export const catalogProducts: ProductItem[] = [
       "Atendimento exlusivo em Orlando/FL-EUA. Um tempo de qualidade com atendimento personalizado e humanizado para que você possa conquistar a sua melhor Versão.",
   },
   {
+    id: "tecnicas-terapias-individuais",
+    title: "Técnicas de Terapias Individuais",
+    href: "https://wa.me/5561998528884?text=Ol%C3%A1.%20Quero%20saber%20mais%20sobre%20as%20T%C3%A9cnicas%20de%20Terapias%20Individuais%20com%20a%20Gleice%20Alleyne.",
+    meta: "Protocolo • 6 sessões • Online ou Presencial",
+    description:
+      "PNL, Hipnose Clínica, Mindfulness, Cromoterapia e Florais — cada técnica com protocolo de 6 sessões e encontros semanais. Você escolhe a ferramenta que mais faz sentido e, juntos, aplicamos o método para destravar a sua vida.",
+  },
+  {
     id: "curso-emc",
-    title: "Curso EMC",
+    title: "Curso Online EMC",
     href: "https://hotmart.com/pt-br/marketplace/produtos/mentoria-emc-espiritualmente-corpo/R100317606L?sck=HOTMART_SITE&search=6f6bd143-87a4-40ad-86a2-0cdeb68f8f2c&hotfeature=33",
     meta: "Curso Completo • Online • Módulos",
     description:
       "O Curso Online Espiritual Mente Corpo irá te dar uma nova visão sobre a vida e como você pode alcançar a sua melhor versão. Muitas vezes estamos travados não por falta de dinheiro ou apoio, mas por falta de enxergar os traumas e bloqueios que vivemos sem perceber.",
+  },
+  {
+    id: "apostila-emc",
+    title: "Apostila EMC",
+    href: "https://hotmart.com/pt-br/marketplace?search=Apostila+EMC+Gleice+Alleyne",
+    meta: "Apostila • Digital • Venda online",
+    description:
+      "Material de apoio do Projeto Espiritual Mente Corpo (EMC) para estudar no seu ritmo, revisitar conceitos e aplicar ferramentas práticas no dia a dia. Disponível para compra online com acesso digital após a confirmação do pagamento.",
   },
   {
     id: "livro-reflexione-1",
