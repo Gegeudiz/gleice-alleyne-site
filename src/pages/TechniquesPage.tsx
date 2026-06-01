@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { site, tecnicaImagePath } from "../content/site";
+import { navTo } from "../lib/navTo";
 
 export function TechniquesPage() {
   const p = site.integrativeTechniques.page;
@@ -56,7 +57,7 @@ export function TechniquesPage() {
               <a className="btn btn--primary" href={p.cta.href} target="_blank" rel="noreferrer">
                 {p.cta.label}
               </a>
-              <Link to="/" className="btn btn--secondary tech-page__back">
+              <Link to={navTo("#topo")} className="btn btn--secondary tech-page__back">
                 ← {p.backLabel}
               </Link>
             </div>
