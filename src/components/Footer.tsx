@@ -1,6 +1,7 @@
-import { BrandLogo } from "./BrandLogo";
-import { SocialLinks } from "./SocialLinks";
 import { site } from "../content/site";
+import { BrandLogo } from "./BrandLogo";
+import { SiteNavLink } from "./SiteNavLink";
+import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   return (
@@ -38,7 +39,7 @@ export function Footer() {
           <ul className="footer__links">
             {site.nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href}>{n.label}</a>
+                <SiteNavLink href={n.href} label={n.label} />
               </li>
             ))}
           </ul>

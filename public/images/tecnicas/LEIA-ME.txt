@@ -1,0 +1,18 @@
+Fotos das técnicas — página "Técnicas Integrativas"
+====================================================
+
+Coloque UMA imagem por técnica nesta pasta, com o nome exato do ID + .png
+
+  terapeuta-clinica.png
+  mindfulness.png
+  logoterapia.png
+  pnl.png
+  auriculoterapia.png
+  hipnose-clinica.png
+  terapeuta-floral.png
+
+Sugestão de tamanho: 800×450 px (proporção 16:9) ou maior, com o assunto ao centro.
+
+Formato: PNG ou JPG. Se usar JPG, altere a função tecnicaImagePath em src/content/site.ts.
+
+Textos de cada técnica: src/content/site.ts → integrativeTechniques.page.items

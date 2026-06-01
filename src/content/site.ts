@@ -39,6 +39,7 @@ export const site = {
   },
   navMain: [
     { label: "Como funciona", href: "#como-funciona" },
+    { label: "Técnicas Integrativas", href: "/tecnicas-integrativas" },
     { label: "Produtos e Serviços", href: "#produtos" },
     { label: "Sobre", href: "#sobre" },
   ] as const,
@@ -60,7 +61,7 @@ export const site = {
           "Protocolo de 6 sessões personalizado",
           "1 sessão por semana",
           "Técnicas integrativas de acordo com a necessidade de cada pessoa",
-          "Princípios Bíblicos unidndo Espiritualidade, Mente e Corpo",
+          "Princípios Bíblicos unindo Espiritualidade, Mente e Corpo",
           "Consulta segura e confidencial com atendimento Personalizado",
         ] as const,
       },
@@ -104,6 +105,71 @@ export const site = {
         ] as const,
       },
     ] as const,
+  },
+  integrativeTechniques: {
+    path: "/tecnicas-integrativas",
+    teaser: {
+      id: "tecnicas-integrativas-teaser",
+      title: "O que são as Técnicas Integrativas?",
+      /** Coloque a imagem em public/images/tecnicas-integrativas-banner.png */
+      backgroundImage: "/images/tecnicas-integrativas-banner.png",
+      ctaLabel: "Conhecer as Técnicas Integrativas",
+    },
+    page: {
+      title: "Técnicas Integrativas",
+      lead: "Ferramentas complementares que apoiam o equilíbrio entre mente, emoções, corpo e espírito — aplicadas com acolhimento, propósito e direcionamento personalizado.",
+      intro:
+        "Conheça as formações e técnicas que a Gleice Alleyne utiliza no atendimento. Ela possui diploma validado em cada uma delas, com aplicação ética, acolhedora e personalizada — em protocolos individuais de 6 sessões semanais ou integradas à Terapia Integrativa completa.",
+      items: [
+        {
+          id: "terapeuta-clinica",
+          name: "Terapeuta Clínica",
+          tagline: "Base clínica para um cuidado seguro e humanizado",
+          body: "Formação que sustenta o olhar terapêutico da Gleice: escuta qualificada, direcionamento clínico e condução responsável do processo, sempre respeitando a sua história, limites e ritmo de transformação.",
+        },
+        {
+          id: "mindfulness",
+          name: "Mindfulness",
+          tagline: "Presença, calma e regulação emocional",
+          body: "Práticas de atenção plena para reduzir ansiedade, aumentar o autocontrole e cultivar uma relação mais gentil consigo mesma. Ideal para quem busca equilíbrio no ritmo acelerado da vida.",
+        },
+        {
+          id: "logoterapia",
+          name: "Logoterapia",
+          tagline: "Sentido, propósito e direção para a vida",
+          body: "Inspirada na busca por significado, a logoterapia ajuda a reorganizar escolhas e valores quando há vazio, crise ou sensação de estar sem direção — reconectando você ao que importa de verdade.",
+        },
+        {
+          id: "pnl",
+          name: "PNL",
+          tagline: "Programação Neurolinguística aplicada à mudança",
+          body: "A PNL auxilia a identificar crenças e padrões que mantêm ciclos repetitivos. Com linguagem e exercícios práticos, você desenvolve respostas mais conscientes no dia a dia.",
+        },
+        {
+          id: "auriculoterapia",
+          name: "Auriculoterapia",
+          tagline: "Estímulos na orelha para equilíbrio integral",
+          body: "Técnica que utiliza pontos específicos da orelha para apoiar bem-estar físico e emocional, complementando o trabalho terapêutico com uma abordagem integrativa e cuidadosa.",
+        },
+        {
+          id: "hipnose-clinica",
+          name: "Hipnose Clínica",
+          tagline: "Acesso profundo a emoções e bloqueios",
+          body: "Em relaxamento guiado e seguro, é possível trabalhar memórias, medos e comportamentos que dificultam o bem-estar. Conduzida com ética, consentimento e acompanhamento terapêutico.",
+        },
+        {
+          id: "terapeuta-floral",
+          name: "Terapeuta Floral",
+          tagline: "Essências florais para apoio emocional",
+          body: "Os florais de Bach e outras linhas complementares auxiliam em medo, insegurança, cansaço ou transição. São aliados suaves para fortalecer o processo entre as sessões.",
+        },
+      ] as const,
+      cta: {
+        label: "Quero saber mais sobre as técnicas",
+        href: "https://wa.me/5561998528884?text=Ol%C3%A1.%20Gostaria%20de%20saber%20mais%20sobre%20as%20T%C3%A9cnicas%20Integrativas%20Individuais%20com%20a%20Gleice%20Alleyne.",
+      },
+      backLabel: "Voltar ao início",
+    },
   },
   featuresBento: {
     title: "Diferenciais e benefícios",
@@ -242,7 +308,9 @@ export const site = {
   footerNote:
     "© 2026 Gleice Alleyne — Todos os direitos reservados.",
   nav: [
+    { label: "Início", href: "#topo" },
     { label: "Como funciona", href: "#como-funciona" },
+    { label: "Técnicas Integrativas", href: "/tecnicas-integrativas" },
     { label: "Produtos", href: "#produtos" },
     { label: "Live", href: "#live-youtube" },
     { label: "Sobre", href: "#sobre" },
@@ -267,6 +335,14 @@ export type ProductItem = {
  */
 export function produtoImagePath(id: string, variant: "vertical" | "wide"): string {
   return `/images/produtos/${id}-${variant}.png`;
+}
+
+/**
+ * Fotos das técnicas (página /tecnicas-integrativas): pasta `public/images/tecnicas/`.
+ * Um ficheiro por técnica: `{id}.png` (ou .jpg — altere a função abaixo).
+ */
+export function tecnicaImagePath(id: string): string {
+  return `/images/tecnicas/${id}.png`;
 }
 
 /** Catálogo exibido na faixa estilo Netflix (clique para expandir). */

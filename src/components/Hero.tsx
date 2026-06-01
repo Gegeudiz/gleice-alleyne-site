@@ -76,24 +76,23 @@ function MicIcon() {
 
 function CamIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M4 8a2 2 0 0 1 2-2h9l4-2v14l-4-2H6a2 2 0 0 1-2-2V8Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M18 10.48V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4.48l4 3.02V7.46l-4 3.02z" />
     </svg>
   );
 }
 
 function PhoneDownIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M6.5 3.5h11a2 2 0 0 1 2 2v6a8 8 0 0 1-8 8h0a8 8 0 0 1-8-8v-6a2 2 0 0 1 2-2Z"
-        fill="currentColor"
-      />
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+      style={{ transform: "rotate(135deg)" }}
+    >
+      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.57c-2.83-1.44-5.15-3.75-6.59-6.59l1.57-1.57a.977.977 0 0 0 .24-1.01c-.36-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
     </svg>
   );
 }

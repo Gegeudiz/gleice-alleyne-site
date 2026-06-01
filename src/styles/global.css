@@ -27,6 +27,16 @@ html {
   scroll-behavior: smooth;
 }
 
+#topo,
+#como-funciona,
+#produtos,
+#sobre,
+#faq,
+#live-youtube,
+#contato {
+  scroll-margin-top: 5.25rem;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);

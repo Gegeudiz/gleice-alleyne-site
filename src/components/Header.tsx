@@ -1,18 +1,29 @@
 import { useState } from "react";
-import { BrandLogo } from "./BrandLogo";
-import { SocialLinks } from "./SocialLinks";
+import { Link } from "react-router-dom";
 import { site } from "../content/site";
+import { navTo } from "../lib/navTo";
+import { BrandLogo } from "./BrandLogo";
+import { SiteNavLink } from "./SiteNavLink";
+import { SocialLinks } from "./SocialLinks";
 
-export function Header() {
+type HeaderProps = {
+  /** `masthead` = topo do site; `page` = páginas internas */
+  variant?: "masthead" | "page";
+};
+
+export function Header({ variant = "masthead" }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const inMasthead = variant === "masthead";
 
   return (
-    <header className="header header--dark header--in-masthead header--health">
+    <header
+      className={`header header--dark header--health${inMasthead ? " header--in-masthead" : " header--standalone"}`}
+    >
       <div className="header__inner header__inner--health">
-        <a className="header__brand" href="#topo" onClick={() => setOpen(false)}>
+        <Link className="header__brand" to={inMasthead ? navTo("#topo") : "/"} onClick={() => setOpen(false)}>
           <BrandLogo className="header__mark header__mark--logo" />
           <strong>{site.brandShort}</strong>
-        </a>
+        </Link>
 
         <nav
           id="menu-principal"
@@ -20,9 +31,7 @@ export function Header() {
           aria-label="Principal"
         >
           {site.navMain.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
-              {item.label}
-            </a>
+            <SiteNavLink key={item.href} href={item.href} label={item.label} onNavigate={() => setOpen(false)} />
           ))}
           <div className="header__nav-footer">
             <SocialLinks className="header__social" />

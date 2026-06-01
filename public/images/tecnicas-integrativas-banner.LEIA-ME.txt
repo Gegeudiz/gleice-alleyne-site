@@ -1,0 +1,10 @@
+Imagem de fundo da faixa "O que são as Técnicas Integrativas?"
+================================================================
+
+Coloque o ficheiro nesta pasta com o nome exato:
+
+  tecnicas-integrativas-banner.png
+
+Sugestão de tamanho: 1600×600 px (ou 16:9), rosto/conteúdo ao centro.
+
+O caminho já está configurado em src/content/site.ts → integrativeTechniques.teaser.backgroundImage
