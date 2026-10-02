@@ -17,8 +17,8 @@
   width: 100%;
   background: linear-gradient(
     168deg,
-    color-mix(in srgb, var(--forest) 94%, #0a1210) 0%,
-    color-mix(in srgb, var(--forest) 82%, #1a2830) 55%,
+    color-mix(in srgb, var(--plum) 94%, #1c0819) 0%,
+    color-mix(in srgb, var(--plum) 82%, var(--blue)) 55%,
     color-mix(in srgb, var(--forest) 76%, var(--terracotta) 10%) 100%
   );
   color: #fff;

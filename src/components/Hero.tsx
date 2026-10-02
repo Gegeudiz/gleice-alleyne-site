@@ -1,30 +1,52 @@
 import { site } from "../content/site";
+import { LineIcon } from "./LineIcon";
 
 export function Hero() {
+  const h = site.hero;
+
   return (
-    <div className="hero hero--health" aria-labelledby="hero-heading">
-      <div className="hero-health">
-        <div className="hero-health__copy">
-          <p className="hero-health__tag">{site.hero.pill}</p>
-          <h1 id="hero-heading" className="hero-health__title">
-            {site.hero.title}
+    <div className="hero hero--lp" aria-labelledby="hero-heading">
+      <div className="hero-lp">
+        <div className="hero-lp__copy">
+          <p className="lp-kicker">{h.pill}</p>
+          <h1 id="hero-heading" className="hero-lp__title">
+            {h.titleLead} <span className="hero-lp__accent">{h.titleAccent}</span>
           </h1>
-          <p className="hero-health__subtitle">{site.hero.subtitle}</p>
-          <a className="btn btn--cta-hero" href={site.whatsapp.hrefAgendarConsulta} target="_blank" rel="noreferrer">
-            {site.hero.ctaPrimary}
-            <span className="btn--cta-hero__circle" aria-hidden>
-              <span className="btn--cta-hero__arrow">→</span>
-            </span>
-          </a>
+          <p className="hero-lp__subtitle">{h.subtitle}</p>
+
+          <ul className="hero-lp__modes" aria-label="Formas de atendimento">
+            {h.modalities.map((m) => (
+              <li key={m.title} className="hero-lp__mode">
+                <span className="hero-lp__mode-icon">
+                  <LineIcon kind={m.icon} size={20} />
+                </span>
+                <span>
+                  <strong>{m.title}</strong>
+                  <small>{m.body}</small>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hero-lp__actions">
+            <a className="btn btn--plum btn--lg" href={site.whatsapp.hrefAgendarConsulta} target="_blank" rel="noreferrer">
+              {h.ctaPrimary}
+              <LineIcon kind="arrow" size={18} />
+            </a>
+          </div>
         </div>
 
-        <div className="hero-health__visual">
-          <div className="hero-health__phone-wrap">
-            <div className="hero-health__phone-shell" aria-hidden>
+        <div className="hero-lp__visual">
+          <div className="hero-lp__stage">
+            <aside className="hero-lp__note" aria-hidden>
+              <p>{h.note}</p>
+            </aside>
+
+            <div className="hero-health__phone-shell hero-lp__phone" aria-hidden>
               <div className="hero-health__phone-notch" />
               <div className="hero-health__phone-screen">
                 <img
-                  src={site.hero.phoneImage}
+                  src={h.phoneImage}
                   alt=""
                   className="hero-health__phone-img"
                   width={720}
@@ -46,13 +68,17 @@ export function Hero() {
                 </button>
               </div>
             </div>
-            <ul className="hero-health__tags">
-              {site.hero.floatTags.map((t) => (
-                <li key={t}>
-                  <span className="hero-health__tag-mark" aria-hidden>
-                    ✓
+
+            <ul className="hero-lp__cards" aria-label="Vantagens do atendimento online">
+              {h.floatCards.map((c, i) => (
+                <li key={c.title} className="hero-lp__card" style={{ animationDelay: `${i * 0.12}s` }}>
+                  <span className="hero-lp__card-icon">
+                    <LineIcon kind={c.icon} size={20} />
                   </span>
-                  {t}
+                  <span>
+                    <strong>{c.title}</strong>
+                    <small>{c.body}</small>
+                  </span>
                 </li>
               ))}
             </ul>

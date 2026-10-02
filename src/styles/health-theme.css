@@ -19,12 +19,12 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Vinheta verde + leve terracota à direita (substitui overlay azul) */
+  /* Vinheta púrpura + leve brilho dourado à direita */
   background: linear-gradient(
     100deg,
-    color-mix(in srgb, var(--forest) 88%, transparent) 0%,
-    color-mix(in srgb, var(--forest) 52%, transparent) 42%,
-    color-mix(in srgb, var(--terracotta) 22%, transparent) 100%
+    color-mix(in srgb, var(--plum-deep) 90%, transparent) 0%,
+    color-mix(in srgb, var(--plum) 55%, transparent) 42%,
+    color-mix(in srgb, var(--gold) 18%, transparent) 100%
   );
 }
 
@@ -33,7 +33,8 @@
 }
 
 .announcement--in-masthead {
-  background: color-mix(in srgb, var(--sage) 55%, var(--forest)) !important;
+  background: color-mix(in srgb, var(--plum-deep) 78%, transparent) !important;
+  color: var(--gold-soft) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -448,14 +449,43 @@
   }
 }
 
-/* Botão CTA do hero (círculo azul) */
-.btn--cta-hero {
-  color: var(--forest);
+/* Botão CTA do hero — ouro com círculo púrpura */
+.btn--cta-hero__circle {
+  background: linear-gradient(145deg, var(--plum), var(--plum-deep));
+  color: #fff;
 }
 
-.btn--cta-hero__circle {
-  background: linear-gradient(145deg, var(--terracotta), color-mix(in srgb, var(--terracotta) 55%, var(--forest)));
-  color: #fff;
+/* Linha de confiança abaixo do CTA do hero */
+.hero-health__trust {
+  margin: 0.9rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.01em;
+}
+
+.hero-health__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-health__trust li + li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .hero-health__trust {
+    justify-content: center;
+    font-size: 0.76rem;
+  }
 }
 
 /* ——— Diferenciais (bento) ——— */
@@ -534,8 +564,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: color-mix(in srgb, var(--terracotta) 22%, transparent);
-  color: var(--terracotta);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold-deep);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -582,15 +612,14 @@
 
 .features-bento__cta .btn {
   align-self: flex-start;
-  background: #fff;
-  color: var(--forest);
-  border-color: #fff;
+  background: var(--gold);
+  color: var(--plum-deep);
+  border-color: color-mix(in srgb, var(--gold) 80%, #000);
   font-weight: 700;
 }
 
 .features-bento__cta .btn:hover {
-  background: var(--rose);
-  border-color: var(--rose);
+  background: color-mix(in srgb, var(--gold) 88%, #000);
 }
 
 @media (max-width: 900px) {

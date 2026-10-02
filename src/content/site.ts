@@ -5,6 +5,10 @@
 const WHATSAPP_HREF =
   "https://wa.me/5561998528884?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Gleice%20Alleyne.";
 
+/** Botão flutuante de WhatsApp — mensagem: «Olá. Acabei de vim do Site e gostaria de saber mais sobre a terapia com a Gleice Àlleyne» */
+const WHATSAPP_FLOAT_HREF =
+  "https://wa.me/5561998528884?text=Ol%C3%A1.%20Acabei%20de%20vim%20do%20Site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20terapia%20com%20a%20Gleice%20%C3%80lleyne";
+
 /** Link com mensagem para consulta inicial — botão hero «Agendar Consulta» e «Dar o primeiro passo». */
 const WHATSAPP_AGENDAR_CONSULTA_HREF =
   "https://wa.me/5561998528884?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20uma%20Consulta%20Inicial%20com%20a%20Gleice%20Alleyne.%20Quero%20dar%20o%20primeiro%20passo%20para%20reorganizar%20minha%20mente.";
@@ -16,19 +20,61 @@ const WHATSAPP_DUVIDAS_EQUIPE_HREF =
 export const site = {
   professionalName: "Gleice Alleyne",
   brandShort: "Gleice Alleyne",
-  /** Monograma GA — header, rodapé; favicon em /public/favicon.png */
+  /**
+   * Logo — ficheiros gerados por `node scripts/crop-logo.mjs` a partir de
+   * public/images/logo-gleice-alleyne-source.jpg (fundo removido automaticamente).
+   */
+  /** Só o símbolo (header, rodapé, favicon) */
   brandLogo: "/images/logo-ga.png",
-  tagline: "Psicóloga e mentora — conteúdo de teste",
+  /** Logo completa (símbolo + nome + tagline) — usada no rodapé */
+  brandLogoFull: "/images/logo-gleice-alleyne.png",
+  tagline: "Terapeuta Integrativa Cristã",
   announcement:
-    "Cuidar da mente nunca foi tão simples — Terapias, Cursos, Livros e Mentorias com clareza. A jornada começa aqui!",
+    "Terapia Integrativa online para o mundo e presencial em Orlando/FL — agende a sua consulta inicial.",
   hero: {
-    pill: "Cuidando de você de qualquer lugar",
-    title: "Terapia Integrativa online, Presencial em Orlando/FL-USA e Cursos.",
-    subtitle:
-      "Conheça os nossos Processos. Uma comunidade organizada para você alcançar a sua melhor versão. Cursos, terapias e Mentorias Online e Presenciais projetados para ajudar você a viver o que Deus reservou para você!",
-    ctaPrimary: "Agendar Consulta",
-    /** Fundo do topo — ficheiro em /public/images (copiado da tua arte Estratégia MKT) */
-    backgroundImage: "/images/hero-bg.png",
+    /** Pequeno texto em maiúsculas acima do título */
+    pill: "Gleice Àlleyne · Orlando/FL - EUA e Brasil",
+    /** Título grande — a última palavra fica em dourado */
+    titleLead: "Terapia Integrativa",
+    titleAccent: "Cristã",
+    title: "Terapia Integrativa Cristã",
+    /** Frase de apoio logo abaixo do título */
+    subtitle: "Levando milhares de pessoas a se reconectarem com a sua Verdadeira Versão.",
+    /** Breve explicação das duas formas de atendimento */
+    modalities: [
+      {
+        icon: "video" as const,
+        title: "Terapia Online",
+        body: "Atendimento em qualquer lugar do mundo, em Português/BR, por videochamada.",
+      },
+      {
+        icon: "pin" as const,
+        title: "Terapia Presencial",
+        body: "No consultório em Orlando/FL – EUA, em ambiente acolhedor e reservado.",
+      },
+    ] as const,
+    ctaPrimary: "Agendar minha consulta",
+    /** Cartões flutuantes à volta do telemóvel */
+    floatCards: [
+      { icon: "globe" as const, title: "Sem barreiras", body: "Atenda de onde estiver" },
+      { icon: "car" as const, title: "Sem trânsito", body: "Mais tempo para você" },
+      { icon: "clock" as const, title: "Sem filas", body: "Foco total na sua jornada" },
+    ] as const,
+    /** Nota pequena ao lado do telemóvel */
+    note: "Terapia online com a mesma qualidade e conexão do presencial.",
+    /** Linha de confiança com ícones (hero e chamada final) */
+    trustIcons: [
+      { icon: "video" as const, label: "Online e Presencial" },
+      { icon: "chat" as const, label: "Atendimento em Português" },
+      { icon: "pin" as const, label: "Em Orlando/FL – EUA e Brasil" },
+    ] as const,
+    /**
+     * Fundo do topo (desktop) — mesa com Bíblia, café e caderno à esquerda, bandeira dos EUA à direita.
+     * Ficheiro: public/images/hero-bg-desk-flag.jpg (substitua pelo mesmo nome para trocar).
+     */
+    backgroundImage: "/images/hero-bg-desk-flag.jpg",
+    /** Fundo do topo (telemóvel, vertical) — bandeira no alto, mesa com Bíblia e café em baixo. */
+    backgroundImageMobile: "/images/hero-bg-mobile.jpg",
     /**
      * Foto dentro do mockup do telemóvel — ficheiro em disco:
      * pasta do projeto: public/images/hero-phone.png
@@ -36,13 +82,177 @@ export const site = {
      */
     phoneImage: "/images/hero-phone.png",
     floatTags: ["Sem barreiras", "Sem trânsito", "Sem filas"] as const,
+    /** Linha de confiança abaixo do botão principal */
+    trustLine: ["Atende online em português, de onde você estiver", "Presencial em Orlando/FL – EUA", "Formações com diploma validado"] as const,
   },
   navMain: [
-    { label: "Como funciona", href: "#como-funciona" },
-    { label: "Técnicas Integrativas", href: "/tecnicas-integrativas" },
-    { label: "Produtos e Serviços", href: "#produtos" },
+    { label: "Início", href: "#topo" },
     { label: "Sobre", href: "#sobre" },
+    { label: "Serviços", href: "#servicos" },
+    { label: "Produtos", href: "#produtos" },
+    { label: "Técnicas Integrativas", href: "/tecnicas-integrativas" },
+    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Contato", href: "#contato" },
   ] as const,
+  /** Botão do cabeçalho */
+  headerCta: { label: "Agendar Consulta", href: WHATSAPP_AGENDAR_CONSULTA_HREF },
+
+  /* ——— LANDING PAGE ——— */
+
+  /** «Como posso te ajudar?» — 4 cartões de serviço */
+  services: {
+    id: "servicos",
+    kicker: "Entenda a abordagem",
+    title: "O que é a Terapia Integrativa Cristã?",
+    /** Explicação curta — parágrafos exibidos abaixo do título */
+    intro: [
+      "É uma abordagem que une as técnicas e ferramentas da Psicologia e da Terapia Integrativa — como PNL, Hipnose Clínica, Mindfulness, Logoterapia, Florais e Auriculoterapia — a uma base firme nos princípios bíblicos cristãos.",
+      "Na prática, você recebe um acompanhamento sério, com método e resultados, que cuida da mente, das emoções e do corpo sem deixar a sua fé de lado. Cada ferramenta é aplicada com propósito, alinhada à Palavra de Deus e à sua história, para que você se reconecte com a sua verdadeira versão.",
+    ],
+    /** Três pilares resumidos (ícone + frase) */
+    pillars: [
+      { icon: "clipboard" as const, label: "Técnicas da Psicologia e da Terapia Integrativa" },
+      { icon: "book" as const, label: "Pautada nos princípios bíblicos cristãos" },
+      { icon: "chart" as const, label: "Método sério, com resultados reais" },
+    ],
+    /** Subtítulo acima dos cartões */
+    cardsTitle: "Técnicas de Terapia Integrativa Aplicadas:",
+    items: [
+      {
+        id: "terapia-integrativa",
+        icon: "heart" as const,
+        title: "Terapia Integrativa",
+        body: "Protocolo personalizado de 6 sessões para viver com mais clareza, equilíbrio e propósito. Online para o mundo ou presencial em Orlando/FL.",
+        href: WHATSAPP_AGENDAR_CONSULTA_HREF,
+        linkLabel: "Agendar consulta",
+      },
+      {
+        id: "tecnicas-individuais",
+        icon: "leaf" as const,
+        title: "Técnicas Integrativas Individuais",
+        body: "PNL, Hipnose Clínica, Mindfulness, Florais, Auriculoterapia e Logoterapia — formações com diploma validado, em protocolos individuais.",
+        href: "/tecnicas-integrativas",
+        linkLabel: "Conhecer as técnicas",
+      },
+      {
+        id: "projeto-emc",
+        icon: "spark" as const,
+        title: "Projeto EMC · Mentoria e Cursos",
+        body: "Espiritual · Mente · Corpo: imersões, workshops e o curso online com o método Autocredibilidade™ para destravar a sua vida.",
+        href: "#produtos",
+        linkLabel: "Ver cursos",
+      },
+      {
+        id: "livros",
+        icon: "book" as const,
+        title: "Livros e Materiais",
+        body: "Versões, Reflexione 1 e 2 e a Apostila EMC — leituras e ferramentas práticas para continuar a jornada no seu ritmo.",
+        href: "#produtos",
+        linkLabel: "Ver livros",
+      },
+    ] as const,
+  },
+
+  /** Faixa de autoridade logo abaixo do topo */
+  trustStrip: [
+    { icon: "globe" as const, title: "Vive nos EUA", body: "Baseada em Orlando, Flórida — atende em português para o mundo todo." },
+    { icon: "video" as const, title: "Terapia online", body: "Sessões por vídeo, com privacidade, ética e horários flexíveis." },
+    { icon: "pin" as const, title: "Presencial em Orlando/FL", body: "Consultório acolhedor e reservado para quem vive ou visita a região." },
+    { icon: "book" as const, title: "Autora e mentora", body: "Livros Versões e Reflexione · criadora do Projeto EMC e do método Autocredibilidade™." },
+  ] as const,
+
+  /** Secção «Online ou presencial» */
+  modalities: {
+    id: "atendimento",
+    title: "Online ou presencial: você escolhe como quer ser atendida",
+    lead: "O mesmo cuidado, a mesma seriedade e o mesmo protocolo personalizado — de onde você estiver ou no consultório em Orlando.",
+    items: [
+      {
+        id: "online",
+        kicker: "Terapia Online",
+        title: "De qualquer lugar do mundo",
+        image: "/images/gleice-studio.png",
+        bullets: [
+          "Sessões por vídeo, com privacidade e ética",
+          "Horários compatíveis com Brasil e EUA",
+          "Protocolo de 6 sessões semanais, personalizado",
+        ] as const,
+        ctaLabel: "Agendar sessão online",
+        href: "https://wa.me/5561998528884?text=Ol%C3%A1.%20Quero%20agendar%20uma%20Consulta%20Inicial%20Online%20com%20a%20Gleice%20Alleyne.",
+      },
+      {
+        id: "presencial",
+        kicker: "Terapia Presencial",
+        title: "Em Orlando, Flórida – EUA",
+        image: "/images/gleice-office.png",
+        bullets: [
+          "Ambiente acolhedor, reservado e exclusivo",
+          "Atendimento individual e personalizado",
+          "Ideal para quem vive ou está de passagem pela Flórida",
+        ] as const,
+        ctaLabel: "Agendar em Orlando",
+        href: "https://wa.me/5561998528884?text=Ol%C3%A1.%20Quero%20agendar%20uma%20Consulta%20Inicial%20Presencial%20em%20Orlando%2FFL%20com%20a%20Gleice%20Alleyne.",
+      },
+    ] as const,
+    /** Link discreto para a página 2 */
+    techniquesLink: "Conheça as Técnicas Integrativas usadas nas sessões",
+  },
+
+  /** «Como funciona» — 4 passos em linha */
+  process: {
+    id: "como-funciona",
+    title: "Um caminho claro, do primeiro contato aos resultados.",
+    lead: "Cada passo é conduzido com cuidado e propósito.",
+    steps: [
+      {
+        icon: "chat" as const,
+        title: "Conversa inicial",
+        body: "Entendemos a sua história, expectativas e necessidades.",
+      },
+      {
+        icon: "clipboard" as const,
+        title: "Protocolo personalizado",
+        body: "Aplicamos as técnicas integrativas alinhadas aos seus objetivos.",
+      },
+      {
+        icon: "people" as const,
+        title: "Sessões e acompanhamento",
+        body: "Um processo consistente, semanal, com suporte da equipe.",
+      },
+      {
+        icon: "chart" as const,
+        title: "Resultados reais",
+        body: "Mais equilíbrio, clareza emocional e uma vida com mais propósito.",
+      },
+    ] as const,
+  },
+
+  /** Produtos — cabeçalho da faixa */
+  productsHead: {
+    kicker: "Conteúdos e ferramentas para a sua jornada",
+    title: "Nossos produtos e Serviços",
+    lead: "Conhecimento, prática e espiritualidade para te apoiar em cada etapa.",
+  },
+
+  /** Depoimentos — cabeçalho */
+  testimonialsHead: {
+    id: "depoimentos",
+    kicker: "Histórias reais, transformações verdadeiras",
+    title: "Comentários e Testemunhos",
+  },
+
+  /** Banda final antes do rodapé */
+  finalCta: {
+    kicker: "Pronta para dar o próximo passo?",
+    title: "Sua jornada de transformação pode começar hoje.",
+    body: "Viva com mais leveza, propósito e conexão. Agende a sua consulta — online ou presencial em Orlando/FL — e dê o primeiro passo para uma vida mais plena.",
+    buttonLabel: "Agendar minha consulta",
+    href: WHATSAPP_AGENDAR_CONSULTA_HREF,
+    secondaryLabel: "Falar no WhatsApp",
+    secondaryHref: WHATSAPP_HREF,
+    /** Foto da banda final — public/images/gleice-final-cta.jpg (retrato 9:16) */
+    image: "/images/gleice-final-cta.jpg",
+  },
   social: [
     { label: "Instagram", href: "https://www.instagram.com/gleicealleyne/", icon: "instagram" as const },
     { label: "YouTube", href: "https://www.youtube.com/@gleicealleyne/videos", icon: "youtube" as const },
@@ -172,8 +382,8 @@ export const site = {
     },
   },
   featuresBento: {
-    title: "Diferenciais e benefícios",
-    lead: "Cada atendimento é conduzido de forma personalizada, unindo conhecimento terapêutico, princípios bíblicos e técnicas integrativas que auxiliam no alinhamento emocional, espiritual e físico.",
+    title: "Um trabalho sério, com propósito e resultados",
+    lead: "Cada atendimento é conduzido de forma personalizada, unindo conhecimento terapêutico, princípios bíblicos e técnicas integrativas com diploma validado.",
     imageCard: {
       src: "/images/gleice-diferenciais.png",
       alt: "Gleice Alleyne — retrato profissional",
@@ -239,6 +449,18 @@ export const site = {
         imageAlt: "Renovação e equilíbrio (ilustrativa)",
       },
     ] as const,
+    /** Chamada ao fim da secção */
+    cta: {
+      title: "Pronta para começar a sua jornada?",
+      body: "A primeira conversa é o passo mais importante. Fale com a equipe e agende a sua consulta inicial.",
+      buttonLabel: "Agendar Consulta",
+      href: WHATSAPP_AGENDAR_CONSULTA_HREF,
+    },
+  },
+  /** Botão flutuante de WhatsApp (todas as páginas) */
+  whatsappFloat: {
+    label: "Falar no WhatsApp",
+    href: WHATSAPP_FLOAT_HREF,
   },
   whatsapp: {
     href: WHATSAPP_HREF,
@@ -261,13 +483,14 @@ export const site = {
     liveEyebrow: "YouTube · Lives e comunidade",
   },
   about: {
-    title: "Sobre a Gleice Alleyne",
+    kicker: "Quem conduz o seu processo",
+    title: "Sobre a Gleice Àlleyne",
+    /** Fotografia da secção — public/images/gleice-family.jpg (4:3) */
+    image: "/images/gleice-family.jpg",
     paragraphs: [
-      " Terapeuta Integrativa Cristã, escritora e criadora do método Autocredibilidade™.",
-      "Casada, mãe de dois filhos maravilhos herança do Senhor, minha missão é ajudar mulheres a romper crenças limitantes, curar feridas emocionais e restaurar o equilíbrio entre mente, corpo e espírito, para que possam viver com mais clareza, confiança e propósito.",
-      "Hoje, uno minha experiência pessoal, meus estudos e minha fé cristã para oferecer um atendimento acolhedor e profundamente transformador. Utilizo uma abordagem integrativa que considera o ser humano como um todo — mente, emoções, corpo e espírito — respeitando a individualidade e a história de cada pessoa.",
-      "Sou autora do livro Versões, no qual compartilho reflexões e ferramentas práticas para o desenvolvimento pessoal e espiritual, e criadora da mentoria EspiritualMente+Corpo (EMC), uma metodologia voltada para a transformação integral.",
-      "Será uma honra caminhar com você em sua jornada de cura, autoconhecimento e transformação."
+      "Terapeuta Integrativa Cristã, escritora e criadora do método Autocredibilidade™. Vive em Orlando, Flórida (EUA), onde atende presencialmente — e online, em português, para pessoas em qualquer parte do mundo.",
+      "Casada e mãe de dois filhos, a sua missão é ajudar mulheres a romper crenças limitantes, curar feridas emocionais e restaurar o equilíbrio entre mente, corpo e espírito, para que vivam com mais clareza, confiança e propósito.",
+      "Autora dos livros Versões e Reflexione, e criadora do Projeto EspiritualMente+Corpo (EMC), uma metodologia voltada para a transformação integral. Será uma honra caminhar com você na sua jornada de cura e autoconhecimento.",
     ],
   },
   testimonials: [
@@ -309,11 +532,13 @@ export const site = {
     "© 2026 Gleice Alleyne — Todos os direitos reservados.",
   nav: [
     { label: "Início", href: "#topo" },
+    { label: "Serviços", href: "#servicos" },
     { label: "Como funciona", href: "#como-funciona" },
     { label: "Técnicas Integrativas", href: "/tecnicas-integrativas" },
     { label: "Produtos", href: "#produtos" },
-    { label: "Live", href: "#live-youtube" },
+    { label: "Depoimentos", href: "#depoimentos" },
     { label: "Sobre", href: "#sobre" },
+    { label: "Live", href: "#live-youtube" },
     { label: "Dúvidas", href: "#faq" },
   ],
 } as const;

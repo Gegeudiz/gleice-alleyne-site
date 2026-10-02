@@ -88,7 +88,7 @@
   color: var(--forest);
   background: #fff;
   border: 2px solid color-mix(in srgb, var(--forest) 22%, transparent);
-  box-shadow: 0 12px 32px rgba(53, 66, 56, 0.1);
+  box-shadow: 0 12px 32px rgba(74, 25, 66, 0.1);
   line-height: 1.25;
   max-width: min(100%, 28rem);
 }
@@ -99,7 +99,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--terracotta);
+  color: var(--gold-deep);
 }
 
 .offer-branches {
@@ -220,7 +220,7 @@
   text-align: left;
   background: #fff;
   border: 1px solid color-mix(in srgb, var(--sage) 18%, transparent);
-  box-shadow: 0 14px 36px rgba(53, 66, 56, 0.08);
+  box-shadow: 0 14px 36px rgba(74, 25, 66, 0.08);
 }
 
 .offer-detail__list {

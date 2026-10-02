@@ -1,6 +1,6 @@
 .announcement {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--sage) 92%, #000), var(--sage));
-  color: #fff;
+  background: linear-gradient(90deg, var(--plum-deep), var(--plum));
+  color: var(--gold-soft);
   text-align: center;
   padding: 0.5rem 1rem;
   font-size: 0.88rem;
@@ -92,8 +92,8 @@
 }
 
 .header--dark:not(.header--in-masthead) {
-  background: rgba(36, 48, 40, 0.92);
-  border-bottom-color: color-mix(in srgb, #fff 10%, transparent);
+  background: color-mix(in srgb, var(--plum-deep) 94%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--gold) 22%, transparent);
 }
 
 .header--dark .header__brand strong {
@@ -178,8 +178,8 @@
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: radial-gradient(circle at 30% 20%, #fff6, transparent 55%), linear-gradient(145deg, var(--forest), #243028);
-  box-shadow: 0 10px 22px rgba(53, 66, 56, 0.25);
+  background: radial-gradient(circle at 30% 20%, #fff6, transparent 55%), linear-gradient(145deg, var(--plum), var(--plum-deep));
+  box-shadow: 0 10px 22px rgba(74, 25, 66, 0.25);
   flex-shrink: 0;
 }
 
@@ -190,7 +190,7 @@
   padding: 0;
   object-fit: cover;
   object-position: center;
-  background: #f5f0e6;
+  background: var(--cream);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
@@ -338,23 +338,25 @@
 }
 
 .btn--primary {
-  background: var(--terracotta);
-  color: #fff;
-  border-color: color-mix(in srgb, var(--terracotta) 70%, #000);
+  background: var(--gold);
+  color: var(--plum-deep);
+  border-color: color-mix(in srgb, var(--gold) 80%, #000);
+  font-weight: 700;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--gold) 35%, transparent);
 }
 
 .btn--primary:hover {
-  background: color-mix(in srgb, var(--terracotta) 88%, #000);
+  background: color-mix(in srgb, var(--gold) 88%, #000);
 }
 
 .btn--secondary {
-  background: var(--forest);
+  background: var(--plum);
   color: #fff;
-  border-color: #243028;
+  border-color: var(--plum-deep);
 }
 
 .btn--secondary:hover {
-  background: #243028;
+  background: var(--plum-deep);
 }
 
 .btn--ghost {
@@ -388,15 +390,15 @@
 }
 
 .btn--ice {
-  background: #fff;
-  color: var(--forest);
-  border-color: #fff;
+  background: var(--gold);
+  color: var(--plum-deep);
+  border-color: color-mix(in srgb, var(--gold) 80%, #000);
   padding-inline: 1.25rem;
+  font-weight: 700;
 }
 
 .btn--ice:hover {
-  background: var(--rose);
-  border-color: var(--rose);
+  background: color-mix(in srgb, var(--gold) 88%, #000);
 }
 
 .btn--ghost-dark {
@@ -474,17 +476,16 @@
   gap: 0.65rem;
   padding: 0.55rem 0.55rem 0.55rem 1.15rem;
   border-radius: 999px;
-  background: #fff;
-  color: var(--forest);
-  border: 1px solid #fff;
+  background: var(--gold);
+  color: var(--plum-deep);
+  border: 1px solid color-mix(in srgb, var(--gold) 80%, #000);
   font-weight: 700;
   font-size: 0.98rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), 0 0 0 1px color-mix(in srgb, var(--gold) 40%, transparent);
 }
 
 .btn--cta-hero:hover {
-  background: var(--rose);
-  border-color: var(--rose);
+  background: color-mix(in srgb, var(--gold) 88%, #000);
 }
 
 .btn--cta-hero__circle {
@@ -495,7 +496,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: color-mix(in srgb, var(--sage) 85%, #1a1e1a);
+  background: var(--plum);
   color: #fff;
 }
 
@@ -728,8 +729,8 @@
 
 /* Products — faixa escura + carrossel edge-to-edge */
 .products--band {
-  background: linear-gradient(180deg, var(--forest) 0%, color-mix(in srgb, var(--forest) 35%, #000) 52%, #000000 100%);
-  border-block: 1px solid color-mix(in srgb, var(--sage) 28%, transparent);
+  background: linear-gradient(180deg, var(--plum) 0%, var(--plum-deep) 55%, #1c0819 100%);
+  border-block: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
   padding: 2.75rem 0 2.25rem;
   margin: 0;
 }
@@ -909,7 +910,7 @@
   overflow: hidden;
   background: #fff;
   border: 1px solid color-mix(in srgb, var(--sage) 18%, transparent);
-  box-shadow: 0 12px 30px rgba(53, 66, 56, 0.08);
+  box-shadow: 0 12px 30px rgba(74, 25, 66, 0.08);
   color: inherit;
   text-align: left;
   transition:
@@ -1147,8 +1148,8 @@
   align-items: center;
   gap: 0.2rem;
   margin: 0 0 0.75rem;
-  color: #facc15;
-  filter: drop-shadow(0 1px 0 color-mix(in srgb, #ca8a04 35%, transparent));
+  color: var(--gold);
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--gold-deep) 35%, transparent));
 }
 
 .quote-card__star {
@@ -1226,7 +1227,7 @@
 }
 
 .faq__icon {
-  color: var(--terracotta);
+  color: var(--gold-deep);
   font-size: 1.25rem;
   line-height: 1;
   width: 1.5rem;

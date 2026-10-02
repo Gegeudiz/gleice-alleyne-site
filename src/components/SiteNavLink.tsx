@@ -6,9 +6,11 @@ type Props = {
   href: string;
   label: string;
   onNavigate?: () => void;
+  className?: string;
+  children?: React.ReactNode;
 };
 
-export function SiteNavLink({ href, label, onNavigate }: Props) {
+export function SiteNavLink({ href, label, onNavigate, className, children }: Props) {
   const location = useLocation();
   const isHash = href.startsWith("#");
   const onHome = location.pathname === "/" || location.pathname === "";
@@ -24,8 +26,9 @@ export function SiteNavLink({ href, label, onNavigate }: Props) {
   };
 
   return (
-    <Link to={navTo(href)} onClick={handleClick}>
+    <Link to={navTo(href)} onClick={handleClick} className={className}>
       {label}
+      {children}
     </Link>
   );
 }

@@ -81,7 +81,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--terracotta);
+  color: var(--gold-deep);
 }
 
 .tech-page__lead {
@@ -107,7 +107,7 @@
   border-radius: var(--radius-md);
   background: #fff;
   border: 1px solid color-mix(in srgb, var(--sage) 18%, transparent);
-  box-shadow: 0 10px 28px rgba(53, 66, 56, 0.06);
+  box-shadow: 0 10px 28px rgba(74, 25, 66, 0.06);
 }
 
 .tech-card__media {
@@ -140,7 +140,7 @@
   margin: 0 0 0.65rem;
   font-size: 0.86rem;
   font-weight: 600;
-  color: var(--terracotta);
+  color: var(--gold-deep);
 }
 
 .tech-card__body {
@@ -168,8 +168,8 @@
 }
 
 .tech-page__back:hover {
-  background: #243028;
-  border-color: #243028;
+  background: var(--plum-deep);
+  border-color: var(--plum-deep);
   color: #fff;
 }
 
