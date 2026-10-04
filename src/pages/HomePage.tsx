@@ -20,7 +20,7 @@ export function HomePage() {
     <>
       <Masthead />
       <main>
-        <div className="page">
+        <div className="page page--services">
           <ScrollReveal delayMs={30}>
             <Services />
           </ScrollReveal>

@@ -13,6 +13,9 @@ const WHATSAPP_FLOAT_HREF =
 const WHATSAPP_AGENDAR_CONSULTA_HREF =
   "https://wa.me/5561998528884?text=Ol%C3%A1.%20Gostaria%20de%20agendar%20uma%20Consulta%20Inicial%20com%20a%20Gleice%20Alleyne.%20Quero%20dar%20o%20primeiro%20passo%20para%20reorganizar%20minha%20mente.";
 
+/** Gera um link de WhatsApp com mensagem pré-preenchida. */
+const wa = (msg: string) => `https://wa.me/5561998528884?text=${encodeURIComponent(msg)}`;
+
 /** FAQ — botão «entrar em contato com a Equipe» */
 const WHATSAPP_DUVIDAS_EQUIPE_HREF =
   "https://wa.me/5561998528884?text=Ol%C3%A1.%20Estou%20com%20d%C3%BAvidas%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20Eventos%2C%20Produtos%20ou%20Servi%C3%A7os%20oferecidos%20pela%20Gleice%20Alleyne.";
@@ -106,7 +109,7 @@ export const site = {
     title: "O que é a Terapia Integrativa Cristã?",
     /** Explicação curta — parágrafos exibidos abaixo do título */
     intro: [
-      "É uma abordagem que une as técnicas e ferramentas da Psicologia e da Terapia Integrativa — como PNL, Hipnose Clínica, Mindfulness, Logoterapia, Florais e Auriculoterapia — a uma base firme nos princípios bíblicos cristãos.",
+      "É uma abordagem que une as técnicas e ferramentas da Psicologia e da Terapia Integrativa — como PNL, Hipnose Clínica, Mindfulness, Logoterapia, Cromoterapia, Florais e Auriculoterapia — a uma base firme nos princípios bíblicos cristãos.",
       "Na prática, você recebe um acompanhamento sério, com método e resultados, que cuida da mente, das emoções e do corpo sem deixar a sua fé de lado. Cada ferramenta é aplicada com propósito, alinhada à Palavra de Deus e à sua história, para que você se reconecte com a sua verdadeira versão.",
     ],
     /** Três pilares resumidos (ícone + frase) */
@@ -115,40 +118,103 @@ export const site = {
       { icon: "book" as const, label: "Pautada nos princípios bíblicos cristãos" },
       { icon: "chart" as const, label: "Método sério, com resultados reais" },
     ],
-    /** Subtítulo acima dos cartões */
-    cardsTitle: "Técnicas de Terapia Integrativa Aplicadas:",
-    items: [
+    /** Título destacado acima dos cartões de preço */
+    cardsTitle: "Técnicas de Terapia Integrativa Aplicadas",
+    cardsLead:
+      "Escolha o formato ideal para o seu momento — online de qualquer lugar do mundo em Português ou presencial em Orlando/FL.",
+    /** Nota comum a todos os planos */
+    installments: "Parcelamento sem juros",
+    /** Aviso exibido logo após os cartões de preço */
+    helpNote: {
+      title: "Não sabe qual formato escolher?",
+      body: "Se você não sabe qual formato faz mais sentido para o seu momento, não se preocupe. Durante o primeiro contato, podemos conversar sobre sua necessidade e encontrar o caminho mais adequado para o seu objetivo.",
+      ctaLabel: "Conversar sobre o meu momento",
+      href: wa("Olá! Vim do site e ainda não sei qual formato de atendimento faz mais sentido para o meu momento. Podemos conversar?"),
+    },
+    /** Cartões com preço */
+    plans: [
       {
-        id: "terapia-integrativa",
+        id: "terapia-integrativa-crista",
         icon: "heart" as const,
-        title: "Terapia Integrativa",
-        body: "Protocolo personalizado de 6 sessões para viver com mais clareza, equilíbrio e propósito. Online para o mundo ou presencial em Orlando/FL.",
-        href: WHATSAPP_AGENDAR_CONSULTA_HREF,
-        linkLabel: "Agendar consulta",
+        badge: "Mais procurado",
+        title: "Terapia Integrativa Cristã",
+        subtitle: "Protocolo com 6 sessões",
+        description:
+          "Um processo terapêutico individualizado, no qual diferentes técnicas integrativas podem ser utilizadas de acordo com as necessidades identificadas ao longo do acompanhamento.",
+        price: "R$ 3.000",
+        priceUnit: "protocolo completo",
+        features: [
+          "6 sessões individuais, online ou presenciais em Orlando/FL",
+          "Protocolo personalizado para a sua história e objetivos",
+          "Técnicas integrativas pautadas nos princípios bíblicos cristãos",
+          "Acompanhamento semanal com suporte da equipe",
+        ],
+        ctaLabel: "Saiba mais",
+        href: wa("Olá! Vim do site e quero saber mais sobre o Protocolo de Terapia Integrativa Cristã (6 sessões)."),
       },
       {
         id: "tecnicas-individuais",
         icon: "leaf" as const,
+        badge: null,
         title: "Técnicas Integrativas Individuais",
-        body: "PNL, Hipnose Clínica, Mindfulness, Florais, Auriculoterapia e Logoterapia — formações com diploma validado, em protocolos individuais.",
-        href: "/tecnicas-integrativas",
-        linkLabel: "Conhecer as técnicas",
+        subtitle: "Protocolo de 10 sessões",
+        description:
+          "Para quem deseja trabalhar uma demanda específica de forma mais direcionada, utilizando uma abordagem ou técnica principal ao longo do processo.",
+        price: "R$ 2.000",
+        priceUnit: "protocolo completo",
+        features: [
+          "PNL, Hipnose, Cromoterapia, Florais, Auriculoterapia, Logoterapia e Mindfulness",
+          "10 sessões focadas na técnica mais indicada para você",
+          "Formações com diploma validado",
+          "Online ou presencial em Orlando/FL",
+        ],
+        ctaLabel: "Saiba mais",
+        href: wa("Olá! Vim do site e quero saber mais sobre o Protocolo de 10 sessões de Técnicas Integrativas Individuais."),
+        secondaryLabel: "Conhecer as técnicas",
+        secondaryHref: "/tecnicas-integrativas",
       },
+      {
+        id: "sessao-avulsa",
+        icon: "clock" as const,
+        badge: null,
+        title: "Sessão Avulsa",
+        subtitle: "Técnicas Integrativas Individuais",
+        description:
+          "Também é possível realizar uma sessão direcionada a uma técnica específica, de acordo com o objetivo apresentado.",
+        price: "R$ 250",
+        priceUnit: "por sessão avulsa",
+        features: [
+          "Uma sessão da técnica à sua escolha",
+          "Ideal para conhecer o trabalho ou tratar uma demanda pontual",
+          "Online ou presencial em Orlando/FL",
+        ],
+        ctaLabel: "Saiba mais",
+        href: wa("Olá! Vim do site e quero saber mais sobre a Sessão Avulsa de Técnicas Integrativas Individuais."),
+      },
+    ] as const,
+    /** Cartões sem preço (mesmo visual) — direcionam para «Nossos produtos e Serviços» */
+    extras: [
       {
         id: "projeto-emc",
         icon: "spark" as const,
         title: "Projeto EMC · Mentoria e Cursos",
-        body: "Espiritual · Mente · Corpo: imersões, workshops e o curso online com o método Autocredibilidade™ para destravar a sua vida.",
+        subtitle: "Espiritual · Mente · Corpo",
+        description:
+          "Imersões, workshops e o curso online com o método Autocredibilidade™, para destravar a sua vida e viver com mais propósito.",
+        features: ["Curso online EMC", "Workshops e imersões", "Mentoria com o método Autocredibilidade™"],
+        ctaLabel: "Saiba mais",
         href: "#produtos",
-        linkLabel: "Ver cursos",
       },
       {
         id: "livros",
         icon: "book" as const,
         title: "Livros e Materiais",
-        body: "Versões, Reflexione 1 e 2 e a Apostila EMC — leituras e ferramentas práticas para continuar a jornada no seu ritmo.",
+        subtitle: "Leituras e ferramentas práticas",
+        description:
+          "Conteúdos para continuar a jornada no seu ritmo, aprofundando o autoconhecimento e a reconexão com a sua verdadeira versão.",
+        features: ["Livro Versões", "Livros Reflexione 1 e 2", "Apostila EMC"],
+        ctaLabel: "Saiba mais",
         href: "#produtos",
-        linkLabel: "Ver livros",
       },
     ] as const,
   },
@@ -329,7 +395,7 @@ export const site = {
       title: "Técnicas Integrativas",
       lead: "Ferramentas complementares que apoiam o equilíbrio entre mente, emoções, corpo e espírito — aplicadas com acolhimento, propósito e direcionamento personalizado.",
       intro:
-        "Conheça as formações e técnicas que a Gleice Alleyne utiliza no atendimento. Ela possui diploma validado em cada uma delas, com aplicação ética, acolhedora e personalizada — em protocolos individuais de 6 sessões semanais ou integradas à Terapia Integrativa completa.",
+        "Conheça as formações e técnicas que a Gleice Alleyne utiliza no atendimento. Ela possui diploma validado em cada uma delas, com aplicação ética, acolhedora e personalizada — em protocolos individuais de 10 sessões, em sessões avulsas ou integradas à Terapia Integrativa Cristã completa.",
       items: [
         {
           id: "terapeuta-clinica",
@@ -374,6 +440,38 @@ export const site = {
           body: "Os florais de Bach e outras linhas complementares auxiliam em medo, insegurança, cansaço ou transição. São aliados suaves para fortalecer o processo entre as sessões.",
         },
       ] as const,
+      /** Formatos e valores — exibidos após a lista de técnicas */
+      pricing: {
+        kicker: "Formatos e investimento",
+        title: "Como você pode ser atendida com essas técnicas",
+        installments: "Parcelamento sem juros",
+        items: [
+          {
+            id: "terapia-integrativa-crista",
+            icon: "heart" as const,
+            title: "Terapia Integrativa Cristã",
+            detail: "Protocolo com 6 sessões usando várias dessas técnicas, de acordo com o seu caso.",
+            price: "R$ 3.000",
+            unit: "protocolo completo",
+          },
+          {
+            id: "tecnicas-individuais",
+            icon: "leaf" as const,
+            title: "Técnicas Integrativas Individuais",
+            detail: "Protocolo de 10 sessões com uma dessas técnicas, de forma direcionada para o seu caso.",
+            price: "R$ 2.000",
+            unit: "protocolo completo",
+          },
+          {
+            id: "sessao-avulsa",
+            icon: "clock" as const,
+            title: "Sessão Avulsa",
+            detail: "Uma sessão de qualquer uma dessas técnicas.",
+            price: "R$ 250",
+            unit: "por sessão",
+          },
+        ] as const,
+      },
       cta: {
         label: "Quero saber mais sobre as técnicas",
         href: "https://wa.me/5561998528884?text=Ol%C3%A1.%20Gostaria%20de%20saber%20mais%20sobre%20as%20T%C3%A9cnicas%20Integrativas%20Individuais%20com%20a%20Gleice%20Alleyne.",

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { LineIcon } from "../components/LineIcon";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { site, tecnicaImagePath } from "../content/site";
 import { navTo } from "../lib/navTo";
@@ -51,6 +52,33 @@ export function TechniquesPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delayMs={30}>
+            <section className="tech-pricing" aria-labelledby="tech-pricing-heading">
+              <p className="tech-page__eyebrow">{p.pricing.kicker}</p>
+              <h2 id="tech-pricing-heading" className="tech-pricing__title">
+                {p.pricing.title}
+              </h2>
+              <ul className="tech-pricing__list">
+                {p.pricing.items.map((item) => (
+                  <li key={item.id} className="tech-pricing__item">
+                    <span className="tech-pricing__icon">
+                      <LineIcon kind={item.icon} size={20} />
+                    </span>
+                    <div className="tech-pricing__text">
+                      <h3>{item.title}</h3>
+                      <p>{item.detail}</p>
+                    </div>
+                    <div className="tech-pricing__price">
+                      <strong>{item.price}</strong>
+                      <small>{item.unit}</small>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="tech-pricing__note">{p.pricing.installments}</p>
+            </section>
+          </ScrollReveal>
 
           <ScrollReveal delayMs={40}>
             <div className="tech-page__actions">
