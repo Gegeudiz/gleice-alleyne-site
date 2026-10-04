@@ -434,6 +434,12 @@ export const site = {
           body: "Em relaxamento guiado e seguro, é possível trabalhar memórias, medos e comportamentos que dificultam o bem-estar. Conduzida com ética, consentimento e acompanhamento terapêutico.",
         },
         {
+          id: "cromoterapia",
+          name: "Cromoterapia",
+          tagline: "O poder das cores a favor do seu equilíbrio",
+          body: "Técnica que utiliza as cores e a luz como estímulos terapêuticos para harmonizar emoções, energia e bem-estar. Cada cor é aplicada com intenção — acalmar, revitalizar, trazer clareza ou acolhimento — complementando o processo de forma suave e sensorial.",
+        },
+        {
           id: "terapeuta-floral",
           name: "Terapeuta Floral",
           tagline: "Essências florais para apoio emocional",
