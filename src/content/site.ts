@@ -109,12 +109,12 @@ export const site = {
     title: "O que é a Terapia Integrativa Cristã?",
     /** Explicação curta — parágrafos exibidos abaixo do título */
     intro: [
-      "É uma abordagem que une as técnicas e ferramentas da Psicologia e da Terapia Integrativa — como PNL, Hipnose Clínica, Mindfulness, Logoterapia, Cromoterapia, Florais e Auriculoterapia — a uma base firme nos princípios bíblicos cristãos.",
+      "É uma abordagem que une as técnicas e ferramentas da Terapia Integrativa — como PNL, Hipnose Clínica, Mindfulness, Logoterapia, Cromoterapia, Florais e Auriculoterapia — a uma base firme nos princípios bíblicos cristãos.",
       "Na prática, você recebe um acompanhamento sério, com método e resultados, que cuida da mente, das emoções e do corpo sem deixar a sua fé de lado. Cada ferramenta é aplicada com propósito, alinhada à Palavra de Deus e à sua história, para que você se reconecte com a sua verdadeira versão.",
     ],
     /** Três pilares resumidos (ícone + frase) */
     pillars: [
-      { icon: "clipboard" as const, label: "Técnicas da Psicologia e da Terapia Integrativa" },
+      { icon: "clipboard" as const, label: "Técnicas da Terapia Integrativa" },
       { icon: "book" as const, label: "Pautada nos princípios bíblicos cristãos" },
       { icon: "chart" as const, label: "Método sério, com resultados reais" },
     ],
