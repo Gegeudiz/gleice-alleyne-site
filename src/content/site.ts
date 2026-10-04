@@ -727,10 +727,10 @@ export const catalogProducts: ProductItem[] = [
   {
     id: "livro-reflexione-2",
     title: "Livro Reflexione 2",
-    href: "https://www.amazon.com/s?k=Gleice+Alleyne+Reflexione+2",
+    href: "https://www.amazon.com/dp/B0GCTXWK2R?lv=shuf&bestFormat=true&social_share=cm_sw_r_ffobk_cso_cp_apin_dp_HXAQ3YM6KCN26MMEG7QH&channelId=704&ref_=cm_sw_r_ffobk_cso_cp_apin_dp_HXAQ3YM6KCN26MMEG7QH&plpRedirect=mhFallback",
     meta: "Livro • Reflexões • Espiritualidade",
     description:
-      "Continuação da jornada de Reflexione — páginas para pausar, questionar e alinhar o coração com verdades que sustentam o dia a dia. Substitua o link pela página oficial do livro na Amazon ou editora quando tiver.",
+      "Continuação da jornada de Reflexione — páginas para pausar, questionar e alinhar o coração com verdades que sustentam o dia a dia.",
   },
   {
     id: "livro-versoes",
